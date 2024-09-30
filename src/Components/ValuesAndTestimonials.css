@@ -1,0 +1,76 @@
+/* Ortak Başlıklar */
+.values-section-title,
+.testimonials-section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.values-section-subtitle,
+.testimonials-section-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f0ad4e;
+  margin-bottom: 10px;
+}
+
+/* Core Values Kartlar */
+.values-section-card {
+  text-align: left;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.values-section-card:hover {
+  transform: scale(1.05);
+}
+
+.values-section-icon {
+  font-size: 2rem;
+  color: #f0ad4e;
+  margin-bottom: 10px;
+}
+
+.values-section-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Testimonials */
+.testimonials-section-quote {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonials-section-quote-icon {
+  font-size: 3rem;
+  color: #f0ad4e;
+  position: absolute;
+  top: -10px;
+  left: -20px;
+}
+
+/* Resimler */
+.values-section-image,
+.testimonials-section-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider içindeki testimonial slaytları */
+.testimonial-slide {
+  padding: 20px;
+}

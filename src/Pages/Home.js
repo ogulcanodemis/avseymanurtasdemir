@@ -4,6 +4,9 @@ import CarouselComponent from '../Components/CarouselComponent'
 import Services from '../Components/Services'
 import AboutSection from '../Components/AboutSection'
 import PracticeAreas from '../Components/PracticeAreas'
+import ValuesAndTestimonials from '../Components/ValuesAndTestimonials'
+import CallToAction from '../Components/CallToAction'
+import FreeConsultation from '../Components/FreeConsultation'
 const Home = () => {
   return (
     <div>
@@ -12,6 +15,9 @@ const Home = () => {
       <Services />
       <AboutSection />
       <PracticeAreas />
+      <ValuesAndTestimonials />
+      <CallToAction />
+      <FreeConsultation />
     </div>
   )
 }

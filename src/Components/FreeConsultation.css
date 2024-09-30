@@ -1,0 +1,65 @@
+/* Başlıkların Ortalanması */
+.consultation-title,
+.consultation-subtitle {
+  text-align: center;
+}
+
+/* Sol ve Sağ Bölümün Aynı Hizada Olması */
+.free-consultation-section .row {
+  display: flex;
+  align-items: center;
+}
+
+/* Kart Stili */
+.consultation-card {
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Kartların Sol Tarafta Düzenli Olması */
+.consultation-card .consultation-icon {
+  font-size: 1.8rem;
+}
+
+/* Form İçindeki Alanların Sola Yaslı Olması */
+.form-control,
+.form-group label {
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+/* Form İçindeki Her Bir Alanın Altına Boşluk Eklenmesi */
+.form-control {
+  margin-bottom: 20px;
+}
+
+/* Butonun Stili */
+.send-message-button {
+  background-color: #f0ad4e;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.send-message-button:hover {
+  background-color: #d9963b;
+}
+
+/* Responsive için Ek Ayar */
+@media (max-width: 768px) {
+  .free-consultation-section .row {
+    flex-direction: column;
+  }
+
+  .send-message-button {
+    width: 100%; /* Küçük ekranlarda buton tam genişlik kaplar */
+  }
+}
+.form-section-footer .form-group {
+  text-align: left !important;
+}
