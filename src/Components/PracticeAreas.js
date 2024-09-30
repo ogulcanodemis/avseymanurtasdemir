@@ -82,13 +82,10 @@ const PracticeAreas = () => {
 
   return (
     <Container className="my-5">
-      <Row className="mb-4">
+      <Row className="mb-4 text-center"> {/* Başlığı ortaladık */}
         <Col>
           <h6 className="text-uppercase text-warning">Professional Services</h6>
           <h2 className="practice-title">Practice Areas</h2>
-        </Col>
-        <Col className="text-right">
-          <a href="#" className="btn btn-warning">View All</a>
         </Col>
       </Row>
 
