@@ -1,0 +1,57 @@
+/* Kartların eşit boyda olmasını sağla ve hover efekti ekle */
+.custom-card {
+  border: none; /* Kartın dış sınırını kaldırdık */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif shadow ekledik */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover efektleri için geçiş süresi */
+}
+
+.custom-card:hover {
+  transform: scale(1.05); /* Hover olduğunda kart 1.05 oranında büyüyecek */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Hover olduğunda shadow artacak */
+}
+
+/* Card içerisindeki resmin altına metin giydirilmiş gibi görünmesi */
+.custom-card img {
+  transition: transform 0.3s ease; /* Resmin hover anında hareketi için */
+}
+
+.custom-card:hover img {
+  transform: translateY(-10px); /* Hover olduğunda resim hafif yukarı çıkacak */
+}
+
+/* Kart başlıkları */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Kart metinleri */
+.card-text {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* "Read More" butonunun hover efektleri */
+.read-more {
+  font-weight: bold;
+  text-decoration: none;
+  color: #2c3e50;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: all 0.4s ease; /* Yavaşça altının çizilmesi için */
+}
+
+.read-more:hover {
+  color: #f0ad4e;
+  border-bottom: 2px solid #f0ad4e; /* Alt çizginin yavaşça görünmesi */
+  background-color: transparent !important;
+}
+
+/* Kartların eşit boyda olması için ayar */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

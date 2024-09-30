@@ -1,0 +1,48 @@
+.practice-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .practice-category {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .practice-card {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .practice-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .practice-icon {
+    font-size: 3rem;
+    color: #f0ad4e;
+    margin-bottom: 10px;
+  }
+  
+  .practice-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e99c3a;
+  }
+  

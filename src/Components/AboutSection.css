@@ -1,0 +1,42 @@
+/* Sol taraftaki "We are Atis" ve "History" başlıkları */
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .history-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 30px;
+  }
+  
+  /* Yazılar için genel stil */
+  .about-text p {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Sağ tarafta yer alan resim ve ödüller */
+  .about-right img {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .awards h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .awards ul {
+    padding-left: 0;
+  }
+  
+  .awards li {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
