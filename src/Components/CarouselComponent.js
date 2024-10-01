@@ -15,7 +15,7 @@ const CarouselComponent = () => {
         />
         <Carousel.Caption className="carousel-caption">
           <Container className="carousel-content">
-            <h1>Hukukun Güvencesiyle, Uzman Çözümler Yanınızda</h1>
+            <h1>Hukukun Güvencesiyle Yanınızdayız</h1>
             <p>
               Av. Şeyma Nur Taşdemir ile hızlı ve güvenilir bir ilerleme
             </p>
