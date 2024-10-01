@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCar, faBriefcase, faHome, faMoneyBill, faUsers, faStethoscope, faGavel, faBuilding } from '@fortawesome/free-solid-svg-icons';
 import './PracticeAreas.css'; // CSS dosyası
 
 const PracticeAreas = () => {
@@ -23,56 +25,56 @@ const PracticeAreas = () => {
 
   const areas = [
     {
-      icon: "🚗", // Örnek ikon
+      icon: faCar, // FontAwesome icon
       category: "Traffic Law",
       title: "Auto Accidents",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "💼",
+      icon: faBriefcase,
       category: "Transactions",
       title: "Finance Law",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "🏠",
+      icon: faHome,
       category: "Business",
       title: "Real Estate",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "💰",
+      icon: faMoneyBill,
       category: "Business",
       title: "Tax Disputes",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "👪",
+      icon: faUsers,
       category: "Legal",
       title: "Family Law",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "🩺",
+      icon: faStethoscope,
       category: "Legal",
       title: "Health Care",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "⚖️",
+      icon: faGavel,
       category: "Justice",
       title: "Labor Law",
       description:
         "Mei eu unum utinam, choro dissentiet accommodare te est, no probo facete commodo vim.",
     },
     {
-      icon: "🏢",
+      icon: faBuilding,
       category: "Business",
       title: "Insurance",
       description:
@@ -95,7 +97,9 @@ const PracticeAreas = () => {
           {areas.map((area, index) => (
             <Col md={3} key={index} className="mb-4">
               <div className="practice-card">
-                <div className="practice-icon">{area.icon}</div>
+                <div className="practice-icon">
+                  <FontAwesomeIcon icon={area.icon} size="2x" />
+                </div>
                 <h6 className="practice-category text-warning">{area.category}</h6>
                 <h5 className="practice-title">{area.title}</h5>
                 <p>{area.description}</p>
@@ -111,7 +115,9 @@ const PracticeAreas = () => {
           {areas.map((area, index) => (
             <div key={index}>
               <div className="practice-card">
-                <div className="practice-icon">{area.icon}</div>
+                <div className="practice-icon">
+                  <FontAwesomeIcon icon={area.icon} size="2x" />
+                </div>
                 <h6 className="practice-category text-warning">{area.category}</h6>
                 <h5 className="practice-title">{area.title}</h5>
                 <p>{area.description}</p>

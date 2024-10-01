@@ -7,6 +7,8 @@ import PracticeAreas from '../Components/PracticeAreas'
 import ValuesAndTestimonials from '../Components/ValuesAndTestimonials'
 import CallToAction from '../Components/CallToAction'
 import FreeConsultation from '../Components/FreeConsultation'
+import GoogleMapComponent from '../Components/GoogleMapComponent'
+import Footer from '../Components/Footer'
 const Home = () => {
   return (
     <div>
@@ -14,10 +16,13 @@ const Home = () => {
       <CarouselComponent />
       <Services />
       <AboutSection />
+      <CallToAction />
       <PracticeAreas />
       <ValuesAndTestimonials />
-      <CallToAction />
       <FreeConsultation />
+      <GoogleMapComponent />
+      <Footer />
+      
     </div>
   )
 }

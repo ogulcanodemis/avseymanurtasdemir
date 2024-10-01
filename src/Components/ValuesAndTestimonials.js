@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock, faUser, faPencilAlt, faTools } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ValuesAndTestimonials.css'; // CSS dosyası
 
@@ -46,28 +48,36 @@ const ValuesAndTestimonials = () => {
           <Row>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
-                <div className="values-section-icon">🛠️</div>
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faTools} size="2x" className="text-warning" />
+                </div>
                 <h5 className="values-section-card-title">Always Listen</h5>
                 <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
-                <div className="values-section-icon">🔒</div>
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faLock} size="2x" className="text-warning" />
+                </div>
                 <h5 className="values-section-card-title">Confidentiality</h5>
                 <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
-                <div className="values-section-icon">👤</div>
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faUser} size="2x" className="text-warning" />
+                </div>
                 <h5 className="values-section-card-title">Right Person</h5>
                 <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
-                <div className="values-section-icon">📝</div>
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faPencilAlt} size="2x" className="text-warning" />
+                </div>
                 <h5 className="values-section-card-title">Expertly Guide</h5>
                 <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
               </div>

@@ -1,0 +1,20 @@
+.google-map-container {
+    padding: 0;
+    max-width: 100%; /* Tam genişlik */
+  }
+  
+  .map-responsive {
+    overflow: hidden;
+    position: relative;
+    height: 450px; /* Sabit yükseklik */
+  }
+  
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%; /* Yükseklik tam olarak container'ın yüksekliğini kaplar */
+    width: 100%; /* Genişlik her zaman %100 olacak */
+    position: absolute;
+    border: 0;
+  }
+  
