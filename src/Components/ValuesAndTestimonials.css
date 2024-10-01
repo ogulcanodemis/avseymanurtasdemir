@@ -30,7 +30,7 @@
 }
 
 .values-section-icon {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #f0ad4e;
   margin-bottom: 10px;
 }
@@ -64,6 +64,7 @@
   height: auto;
   object-fit: cover;
   border-radius: 5px;
+  margin-top: 5rem;
 }
 
 .shadow {

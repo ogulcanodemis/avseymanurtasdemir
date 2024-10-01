@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
-import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa'; // FaXTwitter kaldırıldı, FaTwitter kullanılıyor
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CustomNavbar.css'; // CSS dosyasını ekledik
 
@@ -12,14 +12,12 @@ const CustomNavbar = () => {
         <Container>
           <Row className="align-items-center">
             <Col className="d-flex top-bar-number justify-content-start align-items-center">
-              <FaMapMarkerAlt className="mr-2" /> &nbsp; 40 Park Ave, Brooklyn, New York &nbsp;&nbsp;&nbsp;&nbsp;
-              <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 1-800-111-2222
+              <FaMapMarkerAlt className="mr-2" /> &nbsp; Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4 &nbsp;&nbsp;&nbsp;&nbsp;
+              <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 05396867694
             </Col>
             <Col className="d-flex justify-content-end">
-              <FaFacebookF className="mx-2" />
-              <FaTwitter className="mx-2" />
-              <FaLinkedinIn className="mx-2" />
-              <FaEnvelope className="mx-2" />
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><FaTwitter className="mx-2" /> </a> {/* FaXTwitter yerine FaTwitter */}
+              <a href="https://www.instagram.com/av.seymanurtasdemir?igsh=dTl5dWd1bXE5dXE5" target="_blank" rel="noopener noreferrer"><FaInstagram className="mx-2" /> </a>
             </Col>
           </Row>
         </Container>
@@ -31,13 +29,12 @@ const CustomNavbar = () => {
         <Container>
           <Navbar.Brand href="#home">
             <img
-              src="logo.png"
-              width="30"
-              height="30"
+              src="https://via.placeholder.com/150x50"
+              width="150"
+              height="50"
               className="d-inline-block align-top"
-              alt="Atis logo"
-            />{" "}
-            Atis
+              alt="Placeholder logo"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -48,7 +45,7 @@ const CustomNavbar = () => {
               <Nav.Link href="#contact">İletişim</Nav.Link>
             </Nav>
             <Button variant="warning" className="ml-3 call-btn">
-              Call: 1-800-111-2222
+              Ara: 0539 686 76 94
             </Button>
           </Navbar.Collapse>
         </Container>

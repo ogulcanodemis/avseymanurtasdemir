@@ -1,3 +1,7 @@
+.navbar {
+    background-color: #0d1f21 !important;
+  }
+
 /* Üst Bilgi ile Ana Menü Arasındaki Boşluk */
 .menu-spacing {
     border-bottom: 1px solid #ccc;
@@ -7,6 +11,7 @@
   .top-bar {
     display: flex;
     justify-content: space-between;
+    background-color: #0d1f21 !important;
   }
   
   /* Menüdeki linklerin rengi ve ayarları */

@@ -98,7 +98,7 @@ const ValuesAndTestimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-slide">
                 <Row>
-                  <Col md={6}>
+                  <Col md={6} className="d-flex justify-content-center align-items-center">
                     <img src={testimonial.image} alt={testimonial.name} className="img-fluid testimonials-section-image rounded shadow" />
                   </Col>
                   <Col md={6} className="d-flex flex-column justify-content-center">
