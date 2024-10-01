@@ -12,13 +12,11 @@ const Services = () => {
           <Card className="custom-card h-100">
             <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
             <Card.Body>
-              <Card.Title>Free Consultancy</Card.Title>
+              <Card.Title>Hukuksal Çözümler</Card.Title>
               <Card.Text>
-                Dicit nobis latine qui an, per duis summo impetus an, eam ne perfecto intellegat persequeris.
+              Müvekkillerimize, ihtiyaçlarına en uygun hukuki çözümler sunarak, haklarını en etkin şekilde korumayı hedefliyoruz.
               </Card.Text>
-              <Button variant="link" className="read-more">
-                Read More
-              </Button>
+
             </Card.Body>
           </Card>
         </Col>
@@ -28,13 +26,11 @@ const Services = () => {
           <Card className="custom-card h-100">
             <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
             <Card.Body>
-              <Card.Title>Strategy Models</Card.Title>
+              <Card.Title>Arabulucuk Hizmeti</Card.Title>
               <Card.Text>
-                Dicit nobis latine qui an, per duis summo impetus an, eam ne perfecto intellegat persequeris.
+              Uzlaşmazlıkların hızlı, ekonomik ve dostane bir şekilde çözüme kavuşması için arabuluculuk hizmeti sunmaktayız.
               </Card.Text>
-              <Button variant="link" className="read-more">
-                Read More
-              </Button>
+
             </Card.Body>
           </Card>
         </Col>
@@ -44,13 +40,11 @@ const Services = () => {
           <Card className="custom-card h-100">
             <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
             <Card.Body>
-              <Card.Title>Case Solutions</Card.Title>
+              <Card.Title>Hukuki Danışmanlık</Card.Title>
               <Card.Text>
-                Dicit nobis latine qui an, per duis summo impetus an, eam ne perfecto intellegat persequeris.
+              Sektörel bilgi birikimimiz ve deneyimimizle şirketler ve bireyler için stratejik hukuki danışmanlık hizmetleri sunuyoruz.
               </Card.Text>
-              <Button variant="link" className="read-more">
-                Read More
-              </Button>
+
             </Card.Body>
           </Card>
         </Col>

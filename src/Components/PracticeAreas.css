@@ -1,10 +1,14 @@
+/* Kartlara aynı yüksekliği vermek için */
 .practice-card {
-  text-align: center;
   background-color: #f8f9fa;
-  padding: 20px;
   border-radius: 8px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 350px; /* Sabit bir minimum yükseklik */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Kart içeriğinin düzgün hizalanmasını sağlar */
 }
 
 .practice-card:hover {
@@ -12,18 +16,24 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* İkon stilini düzenlemek için */
 .practice-icon {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
   color: #f0ad4e;
+  font-size: 1.5rem;
 }
 
 .practice-category {
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 1.4rem;
 }
 
 .practice-title {
-  font-size: 1.25rem;
-  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.practice-card p {
+  flex-grow: 1; /* Kartın açıklama kısmı büyüyebilir */
+  margin-bottom: 10px;
 }

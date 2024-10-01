@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock, faUser, faPencilAlt, faTools } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faUser, faPencilAlt, faTools, faShieldAlt, faBalanceScale, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ValuesAndTestimonials.css'; // CSS dosyası
 
@@ -40,19 +40,19 @@ const ValuesAndTestimonials = () => {
 
   return (
     <Container className="values-and-testimonials my-5">
-      {/* İlk bölüm: Our Core Values */}
+      {/* İlk bölüm: Prensiplerimiz */}
       <Row className="align-items-center mb-5">
         <Col md={6}>
-          <h6 className="values-section-subtitle text-uppercase text-warning">Legal Help</h6>
-          <h2 className="values-section-title">Our Core Values</h2>
+          <h6 className="values-section-subtitle text-uppercase text-warning">Avukatlık Prensiplerimiz</h6>
+          <h2 className="values-section-title">Prensiplerimiz</h2>
           <Row>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
                 <div className="values-section-icon">
-                  <FontAwesomeIcon icon={faTools} size="2x" className="text-warning" />
+                  <FontAwesomeIcon icon={faShieldAlt} size="2x" className="text-warning" />
                 </div>
-                <h5 className="values-section-card-title">Always Listen</h5>
-                <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
+                <h5 className="values-section-card-title">Güvenilirlik</h5>
+                <p>Her sözümüzün arkasında durur, müvekkillerimizin haklarını titizlikle koruruz.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
@@ -60,8 +60,26 @@ const ValuesAndTestimonials = () => {
                 <div className="values-section-icon">
                   <FontAwesomeIcon icon={faLock} size="2x" className="text-warning" />
                 </div>
-                <h5 className="values-section-card-title">Confidentiality</h5>
-                <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
+                <h5 className="values-section-card-title">Gizlilik</h5>
+                <p>Müvekkillerimizin bilgilerini en yüksek gizlilikle koruruz.</p>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="values-section-card">
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faTools} size="2x" className="text-warning" />
+                </div>
+                <h5 className="values-section-card-title">Sonuç Odaklılık</h5>
+                <p>En kısa sürede etkili sonuçlar üretmek için çalışırız.</p>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="values-section-card">
+                <div className="values-section-icon">
+                  <FontAwesomeIcon icon={faBalanceScale} size="2x" className="text-warning" />
+                </div>
+                <h5 className="values-section-card-title">Şeffaflık</h5>
+                <p>Müvekkillerimize her adımda açık ve net bilgilendirme sağlarız.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
@@ -69,17 +87,17 @@ const ValuesAndTestimonials = () => {
                 <div className="values-section-icon">
                   <FontAwesomeIcon icon={faUser} size="2x" className="text-warning" />
                 </div>
-                <h5 className="values-section-card-title">Right Person</h5>
-                <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
+                <h5 className="values-section-card-title">Profesyonellik</h5>
+                <p>Her zaman en yüksek kalitede hizmet sunmayı hedefleriz.</p>
               </div>
             </Col>
             <Col md={6} className="mb-4">
               <div className="values-section-card">
                 <div className="values-section-icon">
-                  <FontAwesomeIcon icon={faPencilAlt} size="2x" className="text-warning" />
+                  <FontAwesomeIcon icon={faHandsHelping} size="2x" className="text-warning" />
                 </div>
-                <h5 className="values-section-card-title">Expertly Guide</h5>
-                <p>Sed ut nisi urna, get convallis purus pretium facilisis. Interdum et malesuada.</p>
+                <h5 className="values-section-card-title">Etik Değerler</h5>
+                <p>Her davada etik değerlere bağlı kalarak adil sonuçlar elde ederiz.</p>
               </div>
             </Col>
           </Row>

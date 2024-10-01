@@ -18,8 +18,8 @@ const FreeConsultation = () => {
                 <Card.Body className="d-flex align-items-center">
                   <FaPhoneAlt className="consultation-icon text-warning" />
                   <div className="ml-3">
-                    <h6 className="mb-1">Call Us Today</h6>
-                    <p className="mb-0">1-800-111-2222</p>
+                    <h6 className="mb-1">Hemen Arayın</h6>
+                    <p className="mb-0">0539-686-7694</p>
                   </div>
                 </Card.Body>
               </Card>
@@ -29,8 +29,8 @@ const FreeConsultation = () => {
                 <Card.Body className="d-flex align-items-center">
                   <FaEnvelope className="consultation-icon text-warning" />
                   <div className="ml-3">
-                    <h6 className="mb-1">Send Message</h6>
-                    <p className="mb-0">contact@example.com</p>
+                    <h6 className="mb-1">Mail Gönderin</h6>
+                    <p className="mb-0">info@avseymanurtasdemir.com</p>
                   </div>
                 </Card.Body>
               </Card>
@@ -40,8 +40,8 @@ const FreeConsultation = () => {
                 <Card.Body className="d-flex align-items-center">
                   <FaMapMarkerAlt className="consultation-icon text-warning" />
                   <div className="ml-3">
-                    <h6 className="mb-1">Visit Us</h6>
-                    <p className="mb-0">40 Park Ave, Brooklyn, New York</p>
+                    <h6 className="mb-1">Ziyaretimize Gelin</h6>
+                    <p className="mb-0">Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4,  Kâğıthane</p>
                   </div>
                 </Card.Body>
               </Card>
@@ -51,9 +51,9 @@ const FreeConsultation = () => {
                 <Card.Body className="d-flex align-items-center">
                   <FaClock className="consultation-icon text-warning" />
                   <div className="ml-3">
-                    <h6 className="mb-1">Open Hours</h6>
-                    <p className="mb-0">Mon-Fri: 9AM-5PM</p>
-                    <p className="mb-0">Sat-Sun: Closed</p>
+                    <h6 className="mb-1">Açık Günlerimiz</h6>
+                    <p className="mb-0">Pazartesi-Cuma: 09-17</p>
+                    <p className="mb-0">H.sonu: Kapalı</p>
                   </div>
                 </Card.Body>
               </Card>
@@ -67,26 +67,26 @@ const FreeConsultation = () => {
             <Row>
               <Col md={6}>
                 <Form.Group controlId="formName" className="text-start">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter your name" />
+                  <Form.Label>İsim - Soyisim</Form.Label>
+                  <Form.Control type="text" placeholder="İsminizi Giriniz" />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group controlId="formEmail" className="text-start">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter your email" />
+                  <Form.Label>E-posta</Form.Label>
+                  <Form.Control type="email" placeholder="E-postanızı Giriniz" />
                 </Form.Group>
               </Col>
             </Row>
             <Form.Group controlId="formPhone" className="text-start">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control type="text" placeholder="Enter your phone number" />
+              <Form.Label>Telefon</Form.Label>
+              <Form.Control type="text" placeholder="Telefon Numaranızı Giriniz" />
             </Form.Group>
             <Form.Group controlId="formMessage" className="text-start">
-              <Form.Label>Briefly tell us about your case</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Your message" />
+              <Form.Label>Dosyanız Hakkında Açıklamanız</Form.Label>
+              <Form.Control as="textarea" rows={4} placeholder="Mesajınızı Giriniz" />
             </Form.Group>
-            <Button variant="warning" className="send-message-button ">Send Message</Button>
+            <Button variant="warning" className="send-message-button ">Gönder</Button>
           </Form>
         </Col>
       </Row>

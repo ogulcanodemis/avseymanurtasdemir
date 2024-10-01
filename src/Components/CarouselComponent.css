@@ -1,50 +1,68 @@
 /* Carousel item tam ekran genişlik ve yükseklik */
 .carousel-item {
-    height: 100vh; /* Carousel'in yüksekliği tam ekran olacak */
-  }
-  
-  .carousel-item img {
-    object-fit: cover; /* Görselin carousel alanını kaplaması sağlanır */
-    width: 100%;
-    height: 100%; /* Görselin yüksekliği tam olarak carousel alanına uyacak */
-  }
-  
-  /* Carousel içeriğini hem yatay hem dikey ortalama */
-  .carousel-caption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* İçeriğin tam slayt boyunca ortalanması için */
-    text-align: center;
-  }
-  
-  /* Carousel'deki metinler için */
-  .carousel-content {
-    color: white;
-  }
-  
-  /* Başlık için */
-  .carousel-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  /* Alt yazı */
-  .carousel-content p {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Buton */
-  .consultation-btn {
-    background-color: #f0ad4e;
-    border: none;
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  .consultation-btn:hover {
-    background-color: #ec971f;
-  }
-  
+  height: 100vh; /* Carousel'in yüksekliği tam ekran olacak */
+  position: relative; /* Overlay için gerekli */
+}
+
+.carousel-item img {
+  object-fit: cover; /* Görselin carousel alanını kaplaması sağlanır */
+  width: 100%;
+  height: 100%; /* Görselin yüksekliği tam olarak carousel alanına uyacak */
+}
+
+/* Overlay eklemek için */
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparan siyah overlay */
+  z-index: 1; /* Overlay metnin arkasında kalacak */
+}
+
+/* Carousel içeriğini hem yatay hem dikey ortalama */
+.carousel-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* İçeriğin tam slayt boyunca ortalanması için */
+  text-align: center;
+  z-index: 2; /* İçerik overlay'in üstünde görünmeli */
+}
+
+/* Carousel'deki metinler için */
+.carousel-content {
+  color: white;
+}
+
+/* Başlık için */
+.carousel-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Alt yazı */
+.carousel-content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+/* Buton */
+.consultation-btn {
+  background-color: #f0ad4e;
+  border: none;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  color: white;
+}
+
+.consultation-btn:hover {
+  background-color: #ec971f;
+}
+
+/* Yanlardaki okları gizlemek için */
+.carousel-control-prev, .carousel-control-next {
+  display: none;
+}

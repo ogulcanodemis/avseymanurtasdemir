@@ -7,7 +7,7 @@ const GoogleMapComponent = () => {
     <Container fluid className="google-map-container">
       <div className="map-responsive">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9126679389287!2d-74.00594168471616!3d40.71277527933092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0KHQvtCx0LsuINCh0LXRgNC10LLRgdC60L7QstC-0LvRjNC90LA!5e0!3m2!1str!2str!4v1616589030123!5m2!1str!2str"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.98529901095708!2d28.98161944459883!3d41.07413391058563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab70cfd5faff9%3A0x6215ea555b606d68!2sMaripark%20Ofis!5e0!3m2!1str!2str!4v1727819140757!5m2!1str!2str"
           width="100%"
           height="450"
           style={{ border: 0 }}

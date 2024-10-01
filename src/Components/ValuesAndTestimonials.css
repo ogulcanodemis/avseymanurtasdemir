@@ -1,77 +1,41 @@
-/* Ortak Başlıklar */
-.values-section-title,
-.testimonials-section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 30px;
-}
-
-.values-section-subtitle,
-.testimonials-section-subtitle {
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #f0ad4e;
-  margin-bottom: 10px;
-}
-
-/* Core Values Kartlar */
+/* Kartların aynı boyutta olmasını sağlayan stil */
 .values-section-card {
-  text-align: left;
-  padding: 20px;
   background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 250px; /* Sabit minimum yükseklik */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* İçeriğin düzgün hizalanmasını sağlar */
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
 .values-section-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .values-section-icon {
-  font-size: 1rem;
-  color: #f0ad4e;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .values-section-card-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Testimonials */
-.testimonials-section-quote {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
-  font-style: italic;
-  position: relative;
+.values-section-card p {
+  flex-grow: 1; /* Açıklamanın esneklik göstermesi için */
+  margin-bottom: 10px;
 }
 
-.testimonials-section-quote-icon {
-  font-size: 3rem;
-  color: #f0ad4e;
-  position: absolute;
-  top: -10px;
-  left: -20px;
-}
-
-/* Resimler */
-.values-section-image,
-.testimonials-section-image {
-  max-width: 100%;
-  height: auto;
+/* Image responsive behavior */
+.values-section-image {
+  max-height: 400px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-top: 5rem;
-}
-
-.shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Slider içindeki testimonial slaytları */
-.testimonial-slide {
-  padding: 20px;
+  width: 100%;
 }

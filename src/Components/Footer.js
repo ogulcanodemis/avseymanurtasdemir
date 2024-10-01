@@ -69,7 +69,7 @@ const Footer = () => {
 
         <Row className="mt-4">
           <Col md={12} className="text-center">
-            <p className="mb-0">&copy; 2024 Atis. Designed by MatchThemes.com</p>
+            <p className="mb-0">&copy; 2024 All Rights Reserved. Designed by <a href="https://etki360.com" target="_blank" rel="noopener noreferrer">Etki360.com</a></p> 
           </Col>
         </Row>
       </Container>

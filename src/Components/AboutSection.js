@@ -9,35 +9,37 @@ const AboutSection = () => {
       <Row className="align-items-center"> {/* Dikeyde ortalama için align-items-center */}
         {/* Sol taraf: Yazılar */}
         <Col md={6} className="about-text">
-          <h6 className="text-uppercase text-warning">Since 1995</h6>
-          <h2 className="about-title">We are Atis</h2>
+          <h6 className="text-uppercase text-warning">Hakkımızda</h6>
+          <h2 className="about-title">Biz Kimiz?</h2>
           <p>
-            Molestiae sea vis habemus civibus in, probo illud everti te sea, est ut diceret
-            maiestatis. Autem postulant theophrastus quo id, probo nostro eloquentiam eum ne, vide sale primis sea ex.
-            Mazim assentior eum.
+            Ofisimiz, müvekkillerine en yüksek standartlarda hukuki danışmanlık ve dava takibi hizmeti sağlamaktadır.
+            Müvekkillerimizin karşılaştığı hukuki sorunlara yönelik etkili stratejiler geliştirip, dava süreçlerini titizlikle yönetiyoruz.
+            Yerel ve uluslararası birçok projeye de imza atmış bir ekip olarak, birçok farklı sektörde tanınmış yerli ve yabancı şirketlere hukuki danışmanlık sunuyoruz.
+          </p>
+          <p>
+            Dernekler, vakıflar ve sivil toplum kuruluşlarına da hukuki hizmetler sunarak, bu yapıların hukuki süreçlerini destekliyoruz.
+            Ayrıca, arabuluculuk hizmetlerimizle çözüm odaklı müzakereler yürütmekteyiz.
+            Amacımız, müvekkillerimizin hukuki süreçlerini en kısa sürede ve en az maliyetle sonuçlandırmaktır.
           </p>
 
           <Row>
             {/* Sol sütunda History */}
-            <Col md={6}>
-              <h3 className="history-title">History</h3>
+            <Col md={6} >
+              <h3 className="history-title">Tarihçemiz</h3>
               <p>
-                Vix in erat erant ubique, cum et dicant soluta, postulant mediocrem at mel.
-                Appetere inciderint eloquentiam ne sed. In veri illud erroribus vel, vel ad graeci theophrastus,
-                libris timeam sapientem ex mel.
+                Hukuk büromuz, kurulduğu günden bu yana birçok hukuki başarıya imza atmış, yerli ve yabancı şirketler, dernekler ve bireyler için kapsamlı hukuki hizmetler sunmuştur.
+                Uzman ekibimiz, her geçen gün genişleyerek ve gelişerek müvekkillerine en iyi hizmeti sunmayı ilke edinmiştir.
               </p>
             </Col>
-
             {/* Sağ sütunda Awards */}
-            <Col md={6}>
+            <Col md={6} className="d-flex align-items-center justify-content-center">
               <div className="awards">
-                <h4>Awards</h4>
+                <h3>Aldığımız Ödüller</h3>
                 <ul className="list-unstyled">
-                  <li>• Law Awards 2020</li>
-                  <li>• Super Lawyers 2019</li>
-                  <li>• Pro Bono Award 2019</li>
-                  <li>• Rising Star 2018</li>
-                  <li>• Lawyer of the Year 2018</li>
+                  <li>• Hukuk Uyuşmazlıklarında Arabuluculuk Eğitimi</li>
+                  <li>• Sanık Müdafiiliği, Mağdur, Şikayetçi ve Katılan Vekilliği Sertifikası</li>
+                  <li>• Kadın Hakları ve Aile İçi Şiddet Sertifikası</li>
+                  <li>• Çocuk Hukuku Eğitim Sertifikası</li>
                 </ul>
               </div>
             </Col>

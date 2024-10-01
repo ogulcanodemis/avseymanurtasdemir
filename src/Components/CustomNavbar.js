@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
-import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa'; // FaXTwitter kaldırıldı, FaTwitter kullanılıyor
+import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './CustomNavbar.css'; // CSS dosyasını ekledik
-
+import './CustomNavbar.css';
+import logo from '../assets/logos/logo.png';
 const CustomNavbar = () => {
   return (
     <div>
@@ -29,7 +29,7 @@ const CustomNavbar = () => {
         <Container>
           <Navbar.Brand href="#home">
             <img
-              src="https://via.placeholder.com/150x50"
+              src={logo}  
               width="150"
               height="50"
               className="d-inline-block align-top"

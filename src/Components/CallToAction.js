@@ -8,11 +8,11 @@ const CallToAction = () => {
       <Container>
         <Row className="align-items-center">
           <Col md={8}>
-            <h6 className="cta-subtitle text-warning">Next Step</h6>
-            <h2 className="cta-title">Let's Work Together</h2>
+            <h6 className="cta-subtitle text-warning">Sonraki Adım</h6>
+            <h2 className="cta-title">Bizimle İletişime Geçin</h2>
           </Col>
           <Col md={4} className="text-md-right">
-            <Button variant="warning" className="cta-button">Contact Us</Button>
+            <Button variant="warning" className="cta-button">Bizi Arayın</Button>
           </Col>
         </Row>
       </Container>
