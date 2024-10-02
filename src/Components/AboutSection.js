@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './AboutSection.css'; // CSS dosyası
+import './AboutSection.css';
 
 const AboutSection = () => {
   return (

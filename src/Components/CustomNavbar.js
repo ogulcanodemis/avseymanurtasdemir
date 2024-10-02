@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
-import { FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaTwitter, FaInstagram } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CustomNavbar.css';
+import { Link as ScrollLink } from 'react-scroll'; // react-scroll'den Link kullanımı
 import logo from '../assets/logos/logo.png';
+
 const CustomNavbar = () => {
+  // Navbar scroll state için useState kullanıyoruz
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll olayını dinlemek için useEffect kullanıyoruz
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       {/* Üst Bilgi */}
@@ -16,7 +38,7 @@ const CustomNavbar = () => {
               <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 05396867694
             </Col>
             <Col className="d-flex justify-content-end">
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><FaTwitter className="mx-2" /> </a> {/* FaXTwitter yerine FaTwitter */}
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><FaTwitter className="mx-2" /> </a>
               <a href="https://www.instagram.com/av.seymanurtasdemir?igsh=dTl5dWd1bXE5dXE5" target="_blank" rel="noopener noreferrer"><FaInstagram className="mx-2" /> </a>
             </Col>
           </Row>
@@ -24,8 +46,12 @@ const CustomNavbar = () => {
       </div>
 
       {/* Ana Menü */}
-      <div className="menu-spacing"></div> {/* Menü ile üst bilgi arasına boşluk ekleyen div */}
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar
+        className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}
+        bg="dark"
+        variant="dark"
+        expand="lg"
+      >
         <Container>
           <Navbar.Brand href="#home">
             <img
@@ -39,10 +65,10 @@ const CustomNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#home">Anasayfa</Nav.Link>
-              <Nav.Link href="#about">Hakkımızda</Nav.Link>
-              <Nav.Link href="#services">Hizmetlerimiz</Nav.Link>
-              <Nav.Link href="#contact">İletişim</Nav.Link>
+              <Nav.Link as={ScrollLink} to="home" smooth={true} duration={500}>Anasayfa</Nav.Link>
+              <Nav.Link as={ScrollLink} to="about" smooth={true} duration={500}>Hakkımızda</Nav.Link>
+              <Nav.Link as={ScrollLink} to="services" smooth={true} duration={500}>Hizmetlerimiz</Nav.Link>
+              <Nav.Link as={ScrollLink} to="contact" smooth={true} duration={500}>İletişim</Nav.Link>
             </Nav>
             <Button variant="warning" className="ml-3 call-btn">
               Ara: 0539 686 76 94
