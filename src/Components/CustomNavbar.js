@@ -53,7 +53,7 @@ const CustomNavbar = () => {
         expand="lg"
       >
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               src={logo}  
               width="150"

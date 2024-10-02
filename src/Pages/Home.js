@@ -25,7 +25,7 @@ const Home = () => {
     <div>
       <CustomNavbar />
 
-      <div id="home" data-aos="fade-down">
+      <div id="home" data-aos="fade-left">
         <CarouselComponent />
       </div>
 
@@ -39,7 +39,7 @@ const Home = () => {
         <PracticeAreas />
       </div>
 
-      <div id="contact" data-aos="fade-in">
+      <div id="contact" data-aos="fade-right">
         <FreeConsultation />
         <GoogleMapComponent />
       </div>
