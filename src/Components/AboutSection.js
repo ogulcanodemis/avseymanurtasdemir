@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AboutSection.css';
-
+import terazi from '../assets/banners/terazi.png';
 const AboutSection = () => {
   return (
     <Container className="my-5">
@@ -49,7 +49,7 @@ const AboutSection = () => {
         {/* Sağ taraf: Resim */}
         <Col md={6} className="about-right">
           <img
-            src="https://via.placeholder.com/500x700" // Resmin URL'si
+            src={terazi} // Resmin URL'si
             alt="About us"
             className="img-fluid"
           />

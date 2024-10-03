@@ -8,7 +8,6 @@ const FreeConsultation = () => {
   return (
     <Container className="free-consultation-section my-5">
       <h5 className="consultation-subtitle text-uppercase text-warning">Contact</h5>
-      <h1 className="consultation-title">Free Consultation</h1>
       <Row>
         {/* Sol Sütun - İletişim Bilgileri */}
         <Col md={6} className="mb-4 mt-5">
@@ -19,7 +18,7 @@ const FreeConsultation = () => {
                   <FaPhoneAlt className="consultation-icon text-warning" />
                   <div className="ml-3">
                     <h6 className="mb-1">Hemen Arayın</h6>
-                    <p className="mb-0">0539-686-7694</p>
+                  <a href="tel:0539-686-7694" className="mb-0" style={{ textDecoration: 'none' , color: 'black'}}>0539-686-7694</a>
                   </div>
                 </Card.Body>
               </Card>
@@ -30,7 +29,7 @@ const FreeConsultation = () => {
                   <FaEnvelope className="consultation-icon text-warning" />
                   <div className="ml-3">
                     <h6 className="mb-1">Mail Gönderin</h6>
-                    <p className="mb-0">info@avseymanurtasdemir.com</p>
+                   <a href="mailto:info@avseymanurtasdemir.com" className="mb-0" style={{ textDecoration: 'none' , color: 'black'}}>info@avseymanurtasdemir.com</a>
                   </div>
                 </Card.Body>
               </Card>
