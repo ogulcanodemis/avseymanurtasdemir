@@ -2,6 +2,9 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Services.css'; // CSS dosyası
+import foto1 from '../assets/banners/hukuksalçözümler.jpg';
+import foto2 from '../assets/banners/arabuluculuk.jpg';
+import foto3 from '../assets/banners/hukukidanışmanlık.jpg';
 
 const Services = () => {
   return (
@@ -10,7 +13,7 @@ const Services = () => {
         {/* İlk Kart */}
         <Col md={4} className="mb-4">
           <Card className="custom-card h-100">
-            <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
+            <Card.Img variant="top" src={foto1} />
             <Card.Body>
               <Card.Title>Hukuksal Çözümler</Card.Title>
               <Card.Text>
@@ -24,8 +27,8 @@ const Services = () => {
         {/* İkinci Kart */}
         <Col md={4} className="mb-4">
           <Card className="custom-card h-100">
-            <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
-            <Card.Body>
+          <Card.Img variant="top" src={foto2} />
+          <Card.Body>
               <Card.Title>Arabulucuk Hizmeti</Card.Title>
               <Card.Text>
               Uzlaşmazlıkların hızlı, ekonomik ve dostane bir şekilde çözüme kavuşması için arabuluculuk hizmeti sunmaktayız.
@@ -38,8 +41,8 @@ const Services = () => {
         {/* Üçüncü Kart */}
         <Col md={4} className="mb-4">
           <Card className="custom-card h-100">
-            <Card.Img variant="top" src="https://via.placeholder.com/500x300" />
-            <Card.Body>
+          <Card.Img variant="top" src={foto3} />
+          <Card.Body>
               <Card.Title>Hukuki Danışmanlık</Card.Title>
               <Card.Text>
               Sektörel bilgi birikimimiz ve deneyimimizle şirketler ve bireyler için stratejik hukuki danışmanlık hizmetleri sunuyoruz.

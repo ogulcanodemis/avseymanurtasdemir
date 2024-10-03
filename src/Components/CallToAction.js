@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import './CallToAction.css'; // CSS dosyası
-
 const CallToAction = () => {
   return (
     <div className="cta-section">

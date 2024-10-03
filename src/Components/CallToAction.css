@@ -1,6 +1,6 @@
 /* CTA Section */
 .cta-section {
-    background-image: url('https://via.placeholder.com/1920x500'); /* Buraya gerçek arka plan resmini ekleyin */
+    background-image: url('../assets/banners/banneralt.png'); /* Buraya gerçek arka plan resmini ekleyin */
     background-size: cover;
     background-position: center;
     padding: 80px 0;

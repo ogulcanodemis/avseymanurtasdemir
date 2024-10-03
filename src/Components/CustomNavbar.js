@@ -35,7 +35,7 @@ const CustomNavbar = () => {
           <Row className="align-items-center">
             <Col className="d-flex top-bar-number justify-content-start align-items-center">
               <FaMapMarkerAlt className="mr-2" /> &nbsp; Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4 &nbsp;&nbsp;&nbsp;&nbsp;
-              <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 05396867694
+             <a href="tel:05396867694" style={{ textDecoration: 'none' , color: 'white'}}> <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 05396867694 </a>
             </Col>
             <Col className="d-flex justify-content-end">
               <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><FaTwitter className="mx-2" /> </a>
@@ -71,7 +71,7 @@ const CustomNavbar = () => {
               <Nav.Link as={ScrollLink} to="contact" smooth={true} duration={500}>İletişim</Nav.Link>
             </Nav>
             <Button variant="warning" className="ml-3 call-btn">
-              Ara: 0539 686 76 94
+            <a href="tel:05396867694" style={{ textDecoration: 'none' , color: 'white'}}>  Ara: 0539 686 76 94 </a>
             </Button>
           </Navbar.Collapse>
         </Container>
