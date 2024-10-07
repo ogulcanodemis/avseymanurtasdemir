@@ -24,8 +24,8 @@ const FreeConsultation = () => {
 
     try {
       // Backend'e POST isteği gönderme
-      await axios.post('http://localhost:5000/send-mail', {
-        to: 'info@sirketim.com', // Alıcı e-posta adresi
+      await axios.post('https://www.avseymanurtasdemir.com/send-mail', {
+        to: 'info@avseymanurtasdemir.com', // Alıcı e-posta adresi
         subject: `Yeni Danışma Talebi: ${name} - ${phone}`,
         text: `Ad: ${name}\nE-posta: ${email}\nTelefon: ${phone}\nMesaj: ${message}`,
       });

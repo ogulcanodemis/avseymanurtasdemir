@@ -12,20 +12,20 @@ app.post('/send-mail', (req, res) => {
 
   // Nodemailer yapılandırması
   const transporter = nodemailer.createTransport({
-    host: 'mail.sirketim.com',  // SMTP sunucu adresi
+    host: 'mail.avseymanurtasdemir.com',  // SMTP sunucu adresi
     port: 587,                  // SMTP portu (TLS için 587, SSL için 465)
     secure: false,              // TLS için false, SSL için true
     auth: {
-      user: 'info@sirketim.com',   // Kurumsal e-posta adresi
-      pass: 'your-email-password'  // Kurumsal e-posta şifresi
+      user: 'info@avseymanurtasdemir.com',   // Kurumsal e-posta adresi
+      pass: 'zripNe;*3Nm.'  // Kurumsal e-posta şifresi
     },
-    tls: {
+    tls: {      
       rejectUnauthorized: false  // Self-signed sertifika sorunları varsa bu satır eklenebilir
     }
   });
 
   const mailOptions = {
-    from: 'info@sirketim.com',  // Gönderici adresi (kurumsal e-posta)
+    from: 'mail.avseymanurtasdemir.com',  // Gönderici adresi (kurumsal e-posta)
     to: to,                     // Alıcı adresi
     subject: subject,           // E-posta konusu
     text: text                  // E-posta içeriği
