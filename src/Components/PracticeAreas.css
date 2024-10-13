@@ -37,3 +37,19 @@
   flex-grow: 1; /* Kartın açıklama kısmı büyüyebilir */
   margin-bottom: 10px;
 }
+
+/* Slick Slider Dots İçin Stiller */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slick-dots li {
+  display: none; /* Hepsini başlangıçta gizle */
+}
+
+/* İlk 6-7 dots'ı görünür yapalım */
+.slick-dots li:nth-child(-n+7) {
+  display: inline-block;
+}

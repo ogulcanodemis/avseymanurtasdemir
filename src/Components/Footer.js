@@ -13,8 +13,8 @@ const Footer = () => {
             <p>
               Müvekkillerimize sunduğumuz profesyonellik ve adanmışlık ile hukuki başarılarına katkıda bulunmaktan gurur duyuyoruz.
             </p>
-            <p><i className="fas fa-map-marker-alt"></i> Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4</p>
-            <p><i className="fas fa-phone"></i> 0539 686 76 94</p>
+            <p><i className="fas fa-map-marker-alt"></i> Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4, İstanbul</p>
+            <p><i className="fas fa-phone"></i> <a href="tel:05396867694" className="text-light">0539 686 76 94</a></p>
           </Col>
 
           {/* Hızlı Linkler */}
@@ -45,6 +45,29 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+
+      {/* Schema.org yapılandırması */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Avukat Şeyma Nur Taşdemir",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4",
+            "addressLocality": "İstanbul",
+            "addressRegion": "TR",
+            "postalCode": "34000",
+            "addressCountry": "Türkiye"
+          },
+          "telephone": "+90-539-686-7694",
+          "url": "https://avseymanurtasdemir.com",
+          "sameAs": [
+            "https://www.instagram.com/av.seymanurtasdemir",
+            "https://x.com/avseymatasdemir"
+          ]
+        })}
+      </script>
     </footer>
   );
 };
