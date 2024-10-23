@@ -25,7 +25,7 @@ const CarouselComponent = () => {
                 href="tel:+18001112222"
                 className="consultation-btn"
               >
-                Avukatımızla Ücretsiz Danışmanlık için Hemen Bize Ulaşın
+                Hemen Bize Ulaşın
               </Button>
             </Container>
           </Carousel.Caption>

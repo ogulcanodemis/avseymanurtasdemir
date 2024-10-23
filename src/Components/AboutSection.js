@@ -24,25 +24,14 @@ const AboutSection = () => {
 
           <Row>
             {/* Sol sütunda History */}
-            <Col md={6}>
+            <Col md={12}>
               <h3 className="history-title">Tarihçemiz</h3> {/* H3 başlık olarak düzenlendi */}
               <p>
                 Hukuk büromuz, kurulduğu günden bu yana birçok hukuki başarıya imza atmış, yerli ve yabancı şirketler, dernekler ve bireyler için kapsamlı hukuki hizmetler sunmuştur.
                 Uzman ekibimiz, her geçen gün genişleyerek ve gelişerek müvekkillerine en iyi hizmeti sunmayı ilke edinmiştir.
               </p>
             </Col>
-            {/* Sağ sütunda Awards */}
-            <Col md={6} className="d-flex align-items-center justify-content-center">
-              <div className="awards">
-                <h3>Aldığımız Ödüller</h3>
-                <ul className="list-unstyled">
-                  <li>• Hukuk Uyuşmazlıklarında Arabuluculuk Eğitimi</li>
-                  <li>• Sanık Müdafiiliği, Mağdur, Şikayetçi ve Katılan Vekilliği Sertifikası</li>
-                  <li>• Kadın Hakları ve Aile İçi Şiddet Sertifikası</li>
-                  <li>• Çocuk Hukuku Eğitim Sertifikası</li>
-                </ul>
-              </div>
-            </Col>
+
           </Row>
         </Col>
 

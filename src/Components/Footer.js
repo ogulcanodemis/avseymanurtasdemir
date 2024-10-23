@@ -14,7 +14,7 @@ const Footer = () => {
               Müvekkillerimize sunduğumuz profesyonellik ve adanmışlık ile hukuki başarılarına katkıda bulunmaktan gurur duyuyoruz.
             </p>
             <p><i className="fas fa-map-marker-alt"></i> Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4, İstanbul</p>
-            <p><i className="fas fa-phone"></i> <a href="tel:05396867694" className="text-light">0539 686 76 94</a></p>
+            <p><i className="fas fa-phone"></i> <a href="tel:05396867694" className="text-light" style={{ textDecoration: 'none' }}>0539 686 76 94</a></p>
           </Col>
 
           {/* Hızlı Linkler */}
@@ -41,7 +41,7 @@ const Footer = () => {
 
         <Row className="mt-4">
           <Col md={12} className="text-center">
-            <p className="mb-0">&copy; 2024 Tüm Hakları Saklıdır. Tasarım: <a href="https://etki360.com" target="_blank" rel="noopener noreferrer">Etki360.com</a></p> 
+            <p className="mb-0">&copy; 2024 Tüm Hakları Saklıdır. Tasarım: <a href="https://etki360.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' , color: 'white' }}>Etki360.com</a></p> 
           </Col>
         </Row>
       </Container>

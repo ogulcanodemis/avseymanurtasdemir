@@ -88,13 +88,6 @@ const PracticeAreas = () => {
         "Dijital dünyada müvekkillerimizin dijital haklarını ve veri güvenliğini korumak için bilişim hukuku hizmetleri sunuyoruz.",
     },
     {
-      icon: faHome,
-      category: "Emlak Hukuku",
-      title: "Emlak Hukuku",
-      description:
-        "Gayrimenkul alım-satım, kira sözleşmeleri ve tapu işlemleri konularında hukuki danışmanlık sağlıyoruz.",
-    },
-    {
       icon: faUserTie,
       category: "Miras Hukuku",
       title: "Miras Hukuku",
@@ -115,24 +108,15 @@ const PracticeAreas = () => {
       description:
         "Borç yapılandırma, borç tahsili ve icra takibi gibi süreçlerde danışmanlık hizmetleri sunuyoruz.",
     },
-    {
-      icon: faBuilding,
-      category: "Tüketici Hukuku",
-      title: "Tüketici Hukuku",
-      description:
-        "Tüketici sözleşmeleri, cayma hakkı, ayıplı mal ve garanti süreçlerinde hukuki destek sunuyoruz.",
-    },
   ];
 
   return (
     <Container className="my-5">
       <Row className="mb-4 text-center">
         <Col>
-          <h6 className="text-uppercase text-warning">Çalışma Alanlarımız</h6>
-          <h2 className="practice-title">Çalışma Alanlarımız</h2>
+          <h2 className="text-uppercase text-warning">Çalışma Alanlarımız</h2>
         </Col>
       </Row>
-
       {/* Masaüstü İçin Grid Yapısı */}
       <div className="d-none d-md-block">
         <Row>

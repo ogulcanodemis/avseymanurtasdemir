@@ -52,23 +52,6 @@ const CustomNavbar = () => {
       }
     })}
   </script>
-
-  {/* Üst Bilgi */}
-  <div className="bg-dark text-light py-2 top-bar">
-    <Container>
-      <Row className="align-items-center">
-        <Col className="d-flex top-bar-number justify-content-start align-items-center">
-          <FaMapMarkerAlt className="mr-2" /> &nbsp; Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4 &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="tel:05396867694" style={{ textDecoration: 'none' , color: 'white'}}> <FaPhoneAlt className="ml-4 mr-2" /> &nbsp; 05396867694 </a>
-        </Col>
-        <Col className="d-flex justify-content-end">
-          <a href="https://x.com/avseymatasdemir" target="_blank" rel="noopener noreferrer"><FaTwitter className="mx-2" /> </a>
-          <a href="https://www.instagram.com/av.seymanurtasdemir?igsh=dTl5dWd1bXE5dXE5" target="_blank" rel="noopener noreferrer"><FaInstagram className="mx-2" /> </a>
-        </Col>
-      </Row>
-    </Container>
-  </div>
-
   {/* Ana Menü */}
   <Navbar
     className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}
