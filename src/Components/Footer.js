@@ -1,47 +1,86 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import './Footer.css'; // CSS dosyası
+import { useContact } from '../context/ContactContext';
 
 const Footer = () => {
+  const { contactInfo } = useContact();
+
   return (
     <footer className="footer-section bg-dark text-light py-5">
       <Container>
         <Row>
-          {/* Hakkımızda */}
+          {/* İletişim Bilgileri */}
           <Col md={4}>
-            <h5 className="footer-title">Hakkımızda</h5>
-            <p>
-              Müvekkillerimize sunduğumuz profesyonellik ve adanmışlık ile hukuki başarılarına katkıda bulunmaktan gurur duyuyoruz.
-            </p>
-            <p><i className="fas fa-map-marker-alt"></i> Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4, İstanbul</p>
-            <p><i className="fas fa-phone"></i> <a href="tel:05396867694" className="text-light" style={{ textDecoration: 'none' }}>0539 686 76 94</a></p>
+            <h5>İletişim Bilgileri</h5>
+            <ul className="list-unstyled">
+              {contactInfo.address && (
+                <li className="mb-2">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />
+                  {contactInfo.address}
+                </li>
+              )}
+              {contactInfo.phone && (
+                <li className="mb-2">
+                  <FontAwesomeIcon icon={faPhone} className="me-2" />
+                  <a href={`tel:${contactInfo.phone}`} className="text-light text-decoration-none">
+                    {contactInfo.phone}
+                  </a>
+                </li>
+              )}
+              {contactInfo.email && (
+                <li className="mb-2">
+                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-light text-decoration-none">
+                    {contactInfo.email}
+                  </a>
+                </li>
+              )}
+            </ul>
           </Col>
 
           {/* Hızlı Linkler */}
           <Col md={4}>
-            <h5 className="footer-title">Hızlı Linkler</h5>
+            <h5>Hızlı Linkler</h5>
             <ul className="list-unstyled">
-              <li><a href="#home" className="footer-link">Anasayfa</a></li>
-              <li><a href="#services" className="footer-link">Çalışma Alanları</a></li>
-              <li><a href="#about" className="footer-link">Hakkımızda</a></li>
-              <li><a href="#contact" className="footer-link">İletişim</a></li>
+              <li className="mb-2">
+                <Link to="/" className="text-light text-decoration-none">Ana Sayfa</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/about" className="text-light text-decoration-none">Hakkımızda</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services" className="text-light text-decoration-none">Hizmetlerimiz</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/contact" className="text-light text-decoration-none">İletişim</Link>
+              </li>
             </ul>
           </Col>
 
-          {/* Hukuki Linkler (Çerez Politikası, KVKK, Sorumluluk Reddi) */}
+          {/* Yasal Linkler (Çerez Politikası, KVKK, Sorumluluk Reddi) */}
           <Col md={4}>
-            <h5 className="footer-title">Hukuki</h5>
+            <h5>Yasal</h5>
             <ul className="list-unstyled">
-              <li><a href="/cerez-politikasi" className="footer-link">Çerez Politikası</a></li>
-              <li><a href="/kvkk" className="footer-link">KVKK</a></li>
-              <li><a href="/sorumluluk-reddi" className="footer-link">Sorumluluk Reddi</a></li>
+              <li className="mb-2">
+                <Link to="/kvkk" className="text-light text-decoration-none">KVKK</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/sorumluluk-reddi" className="text-light text-decoration-none">Sorumluluk Reddi</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/cerez-politikasi" className="text-light text-decoration-none">Çerez Politikası</Link>
+              </li>
             </ul>
           </Col>
         </Row>
 
         <Row className="mt-4">
           <Col md={12} className="text-center">
-            <p className="mb-0">&copy; 2024 Tüm Hakları Saklıdır. Tasarım: <a href="https://etki360.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' , color: 'white' }}>Etki360.com</a></p> 
+            <p className="mb-0">&copy; 2024 Av. Şeyma Nur Taşdemir. Tüm hakları saklıdır.</p> 
           </Col>
         </Row>
       </Container>
@@ -54,13 +93,13 @@ const Footer = () => {
           "name": "Avukat Şeyma Nur Taşdemir",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4",
-            "addressLocality": "İstanbul",
-            "addressRegion": "TR",
-            "postalCode": "34000",
+            "streetAddress": contactInfo.address,
+            "addressLocality": "Kağıthane",
+            "addressRegion": "İstanbul",
+            "postalCode": "34406",
             "addressCountry": "Türkiye"
           },
-          "telephone": "+90-539-686-7694",
+          "telephone": contactInfo.phone,
           "url": "https://avseymanurtasdemir.com",
           "sameAs": [
             "https://www.instagram.com/av.seymanurtasdemir",

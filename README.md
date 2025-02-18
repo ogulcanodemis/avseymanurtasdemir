@@ -1,70 +1,186 @@
-# Getting Started with Create React App
+# Avukat Şeyma Nur Taşdemir - Hukuk Bürosu Web Sitesi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bu proje, Avukat Şeyma Nur Taşdemir'in hukuk bürosu için geliştirilmiş modern ve profesyonel bir web sitesidir. React ve PHP kullanılarak oluşturulmuş full-stack bir web uygulamasıdır.
 
-## Available Scripts
+## 🚀 Özellikler
 
-In the project directory, you can run:
+- Modern ve responsive tasarım
+- Admin paneli ile içerik yönetimi
+- Blog yazıları yönetimi
+- Çalışma alanları yönetimi
+- İletişim bilgileri yönetimi
+- SEO optimizasyonu
+- SSL güvenliği
+- Mobil uyumlu tasarım
 
-### `npm start`
+## 🛠️ Teknolojiler
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- React.js
+- Bootstrap 5
+- Font Awesome
+- Axios
+- React Router
+- React Slick
+- AOS (Animate On Scroll)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- PHP 7.4+
+- MySQL
+- PDO
+- JSON Web API
 
-### `npm test`
+### Güvenlik
+- SSL/TLS
+- XSS Koruması
+- CSRF Koruması
+- SQL Injection Koruması
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Proje Yapısı
 
-### `npm run build`
+```
+├── backend/
+│   ├── admin/
+│   │   ├── practice_areas_list.php
+│   │   ├── practice_area_add.php
+│   │   └── practice_area_edit.php
+│   ├── api/
+│   │   ├── get_practice_areas.php
+│   │   ├── get_blogs.php
+│   │   └── get_contacts.php
+│   └── config.php
+├── src/
+│   ├── Components/
+│   │   ├── BlogSection.js
+│   │   ├── CustomNavbar.js
+│   │   ├── Footer.js
+│   │   ├── FreeConsultation.js
+│   │   └── PracticeAreas.js
+│   ├── Pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   └── SingleBlog.js
+│   └── context/
+│       └── ContactContext.js
+└── public/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Kurulum
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Projeyi klonlayın:
+```bash
+git clone [repo-url]
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Frontend bağımlılıklarını yükleyin:
+```bash
+cd [proje-klasörü]
+npm install
+```
 
-### `npm run eject`
+3. Backend için veritabanını oluşturun:
+- MySQL veritabanı oluşturun
+- `backend/config.php` dosyasını düzenleyin
+- SQL dosyalarını içe aktarın
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Geliştirme sunucusunu başlatın:
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Production build alın:
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚙️ Yapılandırma
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Veritabanı Yapılandırması
+`backend/config.php` dosyasını düzenleyin:
+```php
+$host = 'localhost';
+$dbname = 'veritabani_adi';
+$username = 'kullanici_adi';
+$password = 'sifre';
+```
 
-## Learn More
+### API Endpoint'leri
+Frontend'de API URL'lerini güncelleyin:
+```javascript
+const API_URL = 'https://your-domain.com/backend/api';
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Kullanım
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Admin Paneli
+- `/admin` yolunu kullanarak admin paneline erişin
+- Kullanıcı adı ve şifre ile giriş yapın
+- Blog yazıları, çalışma alanları ve iletişim bilgilerini yönetin
 
-### Code Splitting
+### İçerik Yönetimi
+1. Blog Yazıları:
+   - Yeni blog yazısı ekleyin
+   - Mevcut yazıları düzenleyin
+   - Yazıları silin veya aktif/pasif yapın
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Çalışma Alanları:
+   - Yeni çalışma alanı ekleyin
+   - Mevcut alanları düzenleyin
+   - İkonları ve açıklamaları güncelleyin
 
-### Analyzing the Bundle Size
+3. İletişim Bilgileri:
+   - Telefon, e-posta, adres bilgilerini güncelleyin
+   - Çalışma saatlerini düzenleyin
+   - WhatsApp bağlantısını ayarlayın
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔒 Güvenlik
 
-### Making a Progressive Web App
+- Tüm form girdileri için XSS ve SQL Injection koruması
+- Admin paneli için güvenli oturum yönetimi
+- Hassas dosyalara erişim kısıtlaması
+- SSL/TLS şifreleme
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 Mobil Uyumluluk
 
-### Advanced Configuration
+- Responsive tasarım
+- Mobil cihazlar için optimize edilmiş görünüm
+- Touch-friendly arayüz
+- Mobil menü ve slider
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🔍 SEO Optimizasyonu
 
-### Deployment
+- Semantic HTML yapısı
+- Meta etiketleri
+- Schema.org yapılandırması
+- Robots.txt ve Sitemap.xml
+- SEO dostu URL yapısı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 Gereksinimler
 
-### `npm run build` fails to minify
+- PHP 7.4 veya üzeri
+- MySQL 5.7 veya üzeri
+- Node.js 14 veya üzeri
+- npm veya yarn
+- SSL sertifikası
+- Modern web tarayıcısı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Destek
+
+Teknik destek ve sorularınız için:
+- E-posta: [e-posta-adresi]
+- Telefon: [telefon-numarası]
+
+## 🔄 Güncelleme Geçmişi
+
+- v1.0.0 (2024-02-20)
+  - İlk sürüm yayınlandı
+  - Temel özellikler eklendi
+  - Admin paneli entegre edildi
+
+## ⚠️ Önemli Notlar
+
+- Production ortamına geçmeden önce tüm API URL'lerini güncelleyin
+- Veritabanı yedeklerini düzenli olarak alın
+- Güvenlik güncellemelerini takip edin
+- SSL sertifikasının geçerlilik süresini kontrol edin

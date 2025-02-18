@@ -11,6 +11,7 @@ import CallToAction from '../Components/CallToAction';
 import FreeConsultation from '../Components/FreeConsultation';
 import GoogleMapComponent from '../Components/GoogleMapComponent';
 import Footer from '../Components/Footer';
+import BlogSection from '../Components/BlogSection';
 
 const Home = () => {
 
@@ -37,6 +38,10 @@ const Home = () => {
         <Services />
         <CallToAction />
         <PracticeAreas />
+      </div>
+
+      <div id="blog" data-aos="fade-right">
+        <BlogSection />
       </div>
 
       <div id="contact" data-aos="fade-right">

@@ -3,8 +3,11 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './FreeConsultation.css'; // CSS dosyası
+import { useContact } from '../context/ContactContext';
 
 const FreeConsultation = () => {
+  const { contactInfo } = useContact();
+
   return (
     <Container className="free-consultation-section my-5">
       <h2 className="consultation-subtitle text-uppercase text-warning">İLETİŞİM</h2>
@@ -15,8 +18,8 @@ const FreeConsultation = () => {
               <FaPhoneAlt className="consultation-icon text-warning" />
               <div className="ml-3">
                 <h3 className="mb-1">Hemen Arayın</h3>
-                <a href="tel:0539-686-7694" className="mb-0" style={{ textDecoration: 'none', color: 'black' }}>
-                  0539-686-7694
+                <a href={`tel:${contactInfo.phone?.replace(/\s+/g, '')}`} className="mb-0" style={{ textDecoration: 'none', color: 'black' }}>
+                  {contactInfo.phone}
                 </a>
               </div>
             </Card.Body>
@@ -28,8 +31,8 @@ const FreeConsultation = () => {
               <FaEnvelope className="consultation-icon text-warning" />
               <div className="ml-3">
                 <h3 className="mb-1">Mail Gönderin</h3>
-                <a href="mailto:info@avseymanurtasdemir.com" className="mb-0" style={{ textDecoration: 'none', color: 'black' }}>
-                  info@avseymanurtasdemir.com
+                <a href={`mailto:${contactInfo.email}`} className="mb-0" style={{ textDecoration: 'none', color: 'black' }}>
+                  {contactInfo.email}
                 </a>
               </div>
             </Card.Body>
@@ -41,7 +44,7 @@ const FreeConsultation = () => {
               <FaMapMarkerAlt className="consultation-icon text-warning" />
               <div className="ml-3">
                 <h3 className="mb-1">Ziyaretimize Gelin</h3>
-                <p className="mb-0">Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4, Kâğıthane, İstanbul</p>
+                <p className="mb-0">{contactInfo.address}</p>
               </div>
             </Card.Body>
           </Card>
@@ -52,8 +55,7 @@ const FreeConsultation = () => {
               <FaClock className="consultation-icon text-warning" />
               <div className="ml-3">
                 <h3 className="mb-1">Çalışma Saatlerimiz</h3>
-                <p className="mb-0">Pazartesi-Cuma: 09:00 - 17:00</p>
-                <p className="mb-0">Hafta Sonu: Kapalı</p>
+                <p className="mb-0">{contactInfo.working_hours}</p>
               </div>
             </Card.Body>
           </Card>
@@ -68,19 +70,19 @@ const FreeConsultation = () => {
           "name": "Avukat Şeyma Nur Taşdemir",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4",
+            "streetAddress": contactInfo.address,
             "addressLocality": "İstanbul",
             "addressRegion": "TR",
             "postalCode": "34000",
             "addressCountry": "Türkiye"
           },
-          "telephone": "+90-539-686-7694",
-          "email": "info@avseymanurtasdemir.com",
-          "openingHours": "Mo-Fr 09:00-17:00",
+          "telephone": contactInfo.phone,
+          "email": contactInfo.email,
+          "openingHours": contactInfo.working_hours,
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Müşteri Hizmetleri",
-            "telephone": "+90-539-686-7694",
+            "telephone": contactInfo.phone,
             "availableLanguage": ["Türkçe", "İngilizce"]
           }
         })}

@@ -1,0 +1,30 @@
+# PHP Hata Gösterimini Kapat
+php_flag display_errors off
+
+# Dizin Listelemeyi Kapat
+Options -Indexes
+
+# Güvenlik Önlemleri
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^(config\.php|.*\.sql)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# CORS Ayarları
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "https://avseymanurtasdemir.com"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# API Klasörü için CORS
+<Directory "/api">
+    Header set Access-Control-Allow-Origin "https://avseymanurtasdemir.com"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</Directory> 

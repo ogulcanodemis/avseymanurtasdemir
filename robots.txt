@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cgi-bin/
+
+Sitemap: https://avseymanurtasdemir.com/sitemap.xml 
