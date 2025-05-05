@@ -22,15 +22,33 @@ if (!$blog) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
-    $image_url = $_POST['image_url'];
+$error_message = '';
+$success_message = '';
 
-    $stmt = $db->prepare("UPDATE blogs SET title = ?, content = ?, image_url = ? WHERE id = ?");
-    if ($stmt->execute([$title, $content, $image_url, $blog_id])) {
-        header("Location: blog_list.php");
-        exit();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = trim($_POST['title']);
+    $content = trim($_POST['content']);
+    $image_url = trim($_POST['image_url']);
+
+    // Gerekli alanların kontrolü
+    if (empty($title) || empty($content)) {
+        $error_message = "Başlık ve içerik alanları boş bırakılamaz!";
+    } else {
+        try {
+            // updated_at alanını da güncelliyoruz
+            $stmt = $db->prepare("UPDATE blogs SET title = ?, content = ?, image_url = ?, updated_at = NOW() WHERE id = ?");
+            $result = $stmt->execute([$title, $content, $image_url, $blog_id]);
+            
+            if ($result) {
+                // Başarılı güncelleme sonrası blog listesine yönlendir
+                header("Location: blog_list.php?success=2");
+                exit();
+            } else {
+                $error_message = "Blog güncellenirken bir hata oluştu. Lütfen tekrar deneyin.";
+            }
+        } catch (PDOException $e) {
+            $error_message = "Veritabanı hatası: " . $e->getMessage();
+        }
     }
 }
 ?>
@@ -60,6 +78,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <h3>Blog Yazısı Düzenle</h3>
                     </div>
                     <div class="card-body">
+                        <?php if ($error_message): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $error_message; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($success_message): ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $success_message; ?>
+                            </div>
+                        <?php endif; ?>
+
                         <form method="POST" id="blogForm" onsubmit="return validateForm()">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Başlık</label>

@@ -7,15 +7,32 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
-    $image_url = $_POST['image_url'];
+$success_message = "";
+$error_message = "";
 
-    $stmt = $db->prepare("INSERT INTO blogs (title, content, image_url) VALUES (?, ?, ?)");
-    if ($stmt->execute([$title, $content, $image_url])) {
-        header("Location: blog_list.php");
-        exit();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = trim($_POST['title']);
+    $content = trim($_POST['content']);
+    $image_url = trim($_POST['image_url']);
+
+    // Gerekli alanların kontrolü
+    if (empty($title) || empty($content)) {
+        $error_message = "Başlık ve içerik alanları boş bırakılamaz!";
+    } else {
+        try {
+            $stmt = $db->prepare("INSERT INTO blogs (title, content, image_url, created_at, updated_at) VALUES (?, ?, ?, NOW(), NOW())");
+            $result = $stmt->execute([$title, $content, $image_url]);
+            
+            if ($result) {
+                // Başarılı ekleme işlemi, liste sayfasına yönlendir
+                header("Location: blog_list.php?success=1");
+                exit();
+            } else {
+                $error_message = "Blog eklenirken bir hata oluştu. Lütfen tekrar deneyin.";
+            }
+        } catch (PDOException $e) {
+            $error_message = "Veritabanı hatası: " . $e->getMessage();
+        }
     }
 }
 ?>
@@ -45,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <h3>Yeni Blog Yazısı Ekle</h3>
                     </div>
                     <div class="card-body">
+                        <?php if ($error_message): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $error_message; ?>
+                            </div>
+                        <?php endif; ?>
+
                         <form method="POST" id="blogForm" onsubmit="return validateForm()">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Başlık</label>

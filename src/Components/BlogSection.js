@@ -15,6 +15,7 @@ const BlogSection = () => {
   const [showModal, setShowModal] = useState(false);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,10 +33,23 @@ const BlogSection = () => {
     };
 
     fetchBlogs();
+    
+    // Pencere boyutu değiştiğinde mobil/masaüstü durumunu güncelle
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
     AOS.init({
       duration: 1000,
       once: true
     });
+    
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handlePostClick = (post) => {
@@ -50,28 +64,66 @@ const BlogSection = () => {
 
   const sliderSettings = {
     dots: true,
-    infinite: true,
+    infinite: posts.length > 1,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: posts.length >= 3 ? 3 : posts.length,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: posts.length > 1,
     autoplaySpeed: 3000,
+    arrows: posts.length > 1,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToShow: posts.length >= 2 ? 2 : posts.length,
+          slidesToScroll: 1,
+          arrows: posts.length > 1
         }
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrows: posts.length > 1
         }
       }
     ]
+  };
+
+  const renderBlogCards = () => {
+    return (
+      <Row className="blog-cards-container">
+        {posts.map((post) => (
+          <Col lg={4} md={6} sm={12} key={post.id} className="mb-4">
+            <div className="blog-item" onClick={() => handlePostClick(post)}>
+              {post.image_url && (
+                <div className="blog-image">
+                  <img src={post.image_url} alt={post.title} className="w-100" />
+                </div>
+              )}
+              <div className="blog-content">
+                <div className="blog-date">
+                  <FontAwesomeIcon icon={faCalendar} className="me-2" />
+                  {new Date(post.created_at).toLocaleDateString('tr-TR')}
+                </div>
+                <h3 className="blog-title">{post.title}</h3>
+                <p className="blog-excerpt">
+                  {post.content.replace(/<[^>]*>/g, '').substring(0, 100)}...
+                </p>
+                <a 
+                  href={`/blog/${post.id}`} 
+                  className="blog-read-more"
+                  onClick={(e) => handleReadMore(post.id, e)}
+                >
+                  Devamını Oku <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                </a>
+              </div>
+            </div>
+          </Col>
+        ))}
+      </Row>
+    );
   };
 
   if (loading) {
@@ -108,42 +160,93 @@ const BlogSection = () => {
           <div className="section-divider"></div>
         </div>
 
-        <div className="blog-slider" data-aos="fade-up">
-          <Slider {...sliderSettings}>
-            {posts.map((post) => (
-              <div key={post.id} className="px-2">
-                <div className="blog-item" onClick={() => handlePostClick(post)}>
-                  {post.image_url && (
-                    <div className="blog-image">
-                      <img
-                        src={post.image_url}
-                        alt={post.title}
-                        className="w-100"
-                      />
+        {/* Blog sayısı 3'ten fazla ise hem mobilde hem masaüstünde slider gösteriyoruz */}
+        {posts.length > 3 ? (
+          <div className="blog-slider" data-aos="fade-up">
+            <Slider {...sliderSettings}>
+              {posts.map((post) => (
+                <div key={post.id} className="px-2">
+                  <div className="blog-item" onClick={() => handlePostClick(post)}>
+                    {post.image_url && (
+                      <div className="blog-image">
+                        <img
+                          src={post.image_url}
+                          alt={post.title}
+                          className="w-100"
+                        />
+                      </div>
+                    )}
+                    <div className="blog-content">
+                      <div className="blog-date">
+                        <FontAwesomeIcon icon={faCalendar} className="me-2" />
+                        {new Date(post.created_at).toLocaleDateString('tr-TR')}
+                      </div>
+                      <h3 className="blog-title">{post.title}</h3>
+                      <p className="blog-excerpt">
+                        {post.content.replace(/<[^>]*>/g, '').substring(0, 100)}...
+                      </p>
+                      <a 
+                        href={`/blog/${post.id}`} 
+                        className="blog-read-more"
+                        onClick={(e) => handleReadMore(post.id, e)}
+                      >
+                        Devamını Oku <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                      </a>
                     </div>
-                  )}
-                  <div className="blog-content">
-                    <div className="blog-date">
-                      <FontAwesomeIcon icon={faCalendar} className="me-2" />
-                      {new Date(post.created_at).toLocaleDateString('tr-TR')}
-                    </div>
-                    <h3 className="blog-title">{post.title}</h3>
-                    <p className="blog-excerpt">
-                      {post.content.replace(/<[^>]*>/g, '').substring(0, 100)}...
-                    </p>
-                    <a 
-                      href={`/blog/${post.id}`} 
-                      className="blog-read-more"
-                      onClick={(e) => handleReadMore(post.id, e)}
-                    >
-                      Devamını Oku <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
-                    </a>
                   </div>
                 </div>
+              ))}
+            </Slider>
+          </div>
+        ) : (
+          /* Blog sayısı 3 veya daha az ise: mobilde tek blog için özel görünüm, çoklu blog için uygun görünüm */
+          isMobile ? (
+            posts.length === 1 ? (
+              <div className="single-blog-container" data-aos="fade-up">
+                {renderBlogCards()}
               </div>
-            ))}
-          </Slider>
-        </div>
+            ) : (
+              <div className="blog-slider" data-aos="fade-up">
+                <Slider {...sliderSettings}>
+                  {posts.map((post) => (
+                    <div key={post.id} className="px-2">
+                      <div className="blog-item" onClick={() => handlePostClick(post)}>
+                        {post.image_url && (
+                          <div className="blog-image">
+                            <img
+                              src={post.image_url}
+                              alt={post.title}
+                              className="w-100"
+                            />
+                          </div>
+                        )}
+                        <div className="blog-content">
+                          <div className="blog-date">
+                            <FontAwesomeIcon icon={faCalendar} className="me-2" />
+                            {new Date(post.created_at).toLocaleDateString('tr-TR')}
+                          </div>
+                          <h3 className="blog-title">{post.title}</h3>
+                          <p className="blog-excerpt">
+                            {post.content.replace(/<[^>]*>/g, '').substring(0, 100)}...
+                          </p>
+                          <a 
+                            href={`/blog/${post.id}`} 
+                            className="blog-read-more"
+                            onClick={(e) => handleReadMore(post.id, e)}
+                          >
+                            Devamını Oku <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            )
+          ) : (
+            renderBlogCards()
+          )
+        )}
 
         <Modal
           show={showModal}

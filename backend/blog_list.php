@@ -7,11 +7,31 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+// Mesaj parametreleri
+$delete_message = null;
+$delete_error = null;
+$success_message = null;
+
+// URL parametrelerine göre başarı mesajları
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        $success_message = "Blog yazısı başarıyla eklendi.";
+    } else if ($_GET['success'] == 2) {
+        $success_message = "Blog yazısı başarıyla güncellendi.";
+    }
+}
+
 // Blog silme işlemi
 if (isset($_POST['delete_blog'])) {
     $blog_id = $_POST['blog_id'];
     $stmt = $db->prepare("DELETE FROM blogs WHERE id = ?");
-    $stmt->execute([$blog_id]);
+    $success = $stmt->execute([$blog_id]);
+    
+    if ($success) {
+        $delete_message = "Blog yazısı başarıyla silindi.";
+    } else {
+        $delete_error = "Blog yazısı silinemedi. Lütfen tekrar deneyin.";
+    }
 }
 
 // Blogları listele
@@ -41,6 +61,27 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h2>Blog Yazıları</h2>
             <a href="blog_add.php" class="btn btn-primary">Yeni Blog Ekle</a>
         </div>
+
+        <?php if ($delete_message): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $delete_message; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($delete_error): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php echo $delete_error; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($success_message): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $success_message; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
 
         <div class="table-responsive">
             <table class="table table-striped">
@@ -81,5 +122,7 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 

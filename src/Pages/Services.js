@@ -1,15 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import CustomNavbar from '../Components/CustomNavbar';
 import Footer from '../Components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBalanceScale, faUsers, faFileContract, faGavel, faHandshake, faUserShield, faExclamationTriangle, faLandmark, faMedkit, faUserTie, faShieldAlt, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faBalanceScale, faUsers, faFileContract, faGavel, faHandshake, faUserShield, faExclamationTriangle, faLandmark, faMedkit, faUserTie, faShieldAlt, faFolder, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import foto1 from '../assets/banners/hukuksalçözümler.jpg';
 import foto2 from '../assets/banners/arabuluculuk.jpg';
 import foto3 from '../assets/banners/hukukidanışmanlık.jpg';
+import axios from 'axios';
 import './Services.css';
 
 const ServicesPage = () => {
+  const [practiceAreas, setPracticeAreas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Çalışma alanlarını backend'den çek
+    const fetchPracticeAreas = async () => {
+      try {
+        const response = await axios.get('https://avseymanurtasdemir.com/backend/api/get_practice_areas.php');
+        if (response.data.status === 'success') {
+          setPracticeAreas(response.data.data);
+        } else {
+          console.error('Çalışma alanları çekilirken hata oluştu:', response.data.message);
+        }
+      } catch (error) {
+        console.error('API isteği sırasında hata oluştu:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchPracticeAreas();
+  }, []);
+
+  // Icon adını FontAwesome ikonuna çevirme fonksiyonu
+  const getIconByName = (iconName) => {
+    const iconMap = {
+      'faBalanceScale': faBalanceScale,
+      'faUsers': faUsers,
+      'faFileContract': faFileContract,
+      'faGavel': faGavel,
+      'faHandshake': faHandshake,
+      'faUserShield': faUserShield,
+      'faExclamationTriangle': faExclamationTriangle,
+      'faLandmark': faLandmark,
+      'faMedkit': faMedkit,
+      'faUserTie': faUserTie,
+      'faShieldAlt': faShieldAlt,
+      'faFolder': faFolder
+    };
+    
+    return iconMap[iconName] || faBalanceScale; // Varsayılan ikon
+  };
+
   const mainServices = [
     {
       image: foto1,
@@ -28,49 +72,6 @@ const ServicesPage = () => {
       title: "Hukuki Danışmanlık",
       description: "Sektörel bilgi birikimimiz ve deneyimimizle şirketler ve bireyler için stratejik hukuki danışmanlık hizmetleri sunuyoruz.",
       icon: faFileContract
-    }
-  ];
-
-  const practiceAreas = [
-    {
-      icon: faBalanceScale,
-      title: "Ticaret ve Şirketler Hukuku",
-      description: "Şirketlerin kuruluşu, birleşmeleri, devir, hisse satışları ve ticari sözleşmeler gibi ticaret hukuku alanlarında hizmet veriyoruz."
-    },
-    {
-      icon: faUsers,
-      title: "Dernek ve Vakıflar",
-      description: "Dernek ve vakıfların kuruluşu ve hukuki süreçleri ile ilgili danışmanlık hizmetleri sunuyoruz."
-    },
-    {
-      icon: faGavel,
-      title: "İcra ve İflas Hukuku",
-      description: "Alacak tahsili ve iflas süreçlerini yöneterek stratejik çözümler sunuyoruz."
-    },
-    {
-      icon: faUserShield,
-      title: "KVKK/GDPR",
-      description: "Şirketlerin KVKK ve GDPR uyumluluğunu sağlamak adına danışmanlık hizmetleri sunuyoruz."
-    },
-    {
-      icon: faExclamationTriangle,
-      title: "Ceza Hukuku",
-      description: "Mali suçlar, dolandırıcılık ve zimmet davalarında hukuki savunma ve danışmanlık hizmetleri sunuyoruz."
-    },
-    {
-      icon: faLandmark,
-      title: "İş Hukuku",
-      description: "İşverenler ve çalışanlar için iş sözleşmeleri, işçi hakları ve tazminat süreçlerinde hukuki danışmanlık sağlıyoruz."
-    },
-    {
-      icon: faMedkit,
-      title: "Bilişim Hukuku",
-      description: "Dijital dünyada müvekkillerimizin dijital haklarını ve veri güvenliğini korumak için bilişim hukuku hizmetleri sunuyoruz."
-    },
-    {
-      icon: faUserTie,
-      title: "Miras Hukuku",
-      description: "Miras süreçlerinin yönetimi, vasiyetname hazırlanması ve miras paylaşımı konusunda danışmanlık sağlıyoruz."
     }
   ];
 
@@ -125,17 +126,25 @@ const ServicesPage = () => {
             <h2 className="section-title">Çalışma Alanlarımız</h2>
             <div className="section-divider center"></div>
           </div>
-          <Row>
-            {practiceAreas.map((area, index) => (
-              <Col md={6} lg={3} key={index}>
-                <div className="practice-card">
-                  <FontAwesomeIcon icon={area.icon} className="practice-icon" />
-                  <h3>{area.title}</h3>
-                  <p>{area.description}</p>
-                </div>
-              </Col>
-            ))}
-          </Row>
+          
+          {loading ? (
+            <div className="text-center py-5">
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" className="text-primary mb-3" />
+              <p>Çalışma alanları yükleniyor...</p>
+            </div>
+          ) : (
+            <Row>
+              {practiceAreas.map((area) => (
+                <Col md={6} lg={3} key={area.id}>
+                  <div className="practice-card">
+                    <FontAwesomeIcon icon={getIconByName(area.icon)} className="practice-icon" />
+                    <h3>{area.title}</h3>
+                    <p>{area.description}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          )}
         </Container>
       </section>
 

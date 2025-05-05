@@ -148,7 +148,7 @@ const API_URL = 'https://your-domain.com/backend/api';
 - Touch-friendly arayüz
 - Mobil menü ve slider
 
-## 🔍 SEO Optimizasyonu
+## 🔍 SEO Optimizasyonu 
 
 - Semantic HTML yapısı
 - Meta etiketleri
@@ -164,23 +164,3 @@ const API_URL = 'https://your-domain.com/backend/api';
 - npm veya yarn
 - SSL sertifikası
 - Modern web tarayıcısı
-
-## 🤝 Destek
-
-Teknik destek ve sorularınız için:
-- E-posta: [e-posta-adresi]
-- Telefon: [telefon-numarası]
-
-## 🔄 Güncelleme Geçmişi
-
-- v1.0.0 (2024-02-20)
-  - İlk sürüm yayınlandı
-  - Temel özellikler eklendi
-  - Admin paneli entegre edildi
-
-## ⚠️ Önemli Notlar
-
-- Production ortamına geçmeden önce tüm API URL'lerini güncelleyin
-- Veritabanı yedeklerini düzenli olarak alın
-- Güvenlik güncellemelerini takip edin
-- SSL sertifikasının geçerlilik süresini kontrol edin
