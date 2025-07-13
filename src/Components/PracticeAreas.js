@@ -43,7 +43,7 @@ const PracticeAreas = () => {
   useEffect(() => {
     const fetchAreas = async () => {
       try {
-        const response = await axios.get('https://avseymanurtasdemir.com/backend/api/get_practice_areas.php');
+        const response = await axios.get('https://avseymanurtasdemir.com/backend/api/get_practice_areas_final.php');
         if (response.data.status === 'success') {
           setAreas(response.data.data);
         }
