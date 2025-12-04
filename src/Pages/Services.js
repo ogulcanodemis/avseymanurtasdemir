@@ -18,7 +18,7 @@ const ServicesPage = () => {
     // Çalışma alanlarını backend'den çek
     const fetchPracticeAreas = async () => {
       try {
-        const response = await axios.get('https://avseymanurtasdemir.com/backend/api/get_practice_areas_final.php');
+        const response = await axios.get('https://seymanurtasdemir.av.tr/backend/api/get_practice_areas_final.php');
         if (response.data.status === 'success') {
           setPracticeAreas(response.data.data);
         } else {

@@ -17,7 +17,7 @@ export const ContactProvider = ({ children }) => {
     useEffect(() => {
         const fetchContacts = async () => {
             try {
-                const response = await axios.get('https://avseymanurtasdemir.com/backend/api/get_contacts_final.php');
+                const response = await axios.get('https://seymanurtasdemir.av.tr/backend/api/get_contacts_final.php');
                 if (response.data.status === 'success') {
                     const contacts = response.data.data;
                     setContactInfo({

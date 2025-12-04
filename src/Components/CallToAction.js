@@ -31,7 +31,7 @@ const CallToAction = () => {
           "contactType": "Müşteri Hizmetleri",
           "availableLanguage": ["Türkçe", "İngilizce"],
           "areaServed": "TR",
-          "url": "https://avseymanurtasdemir.com"
+          "url": "https://seymanurtasdemir.av.tr"
         })}
       </script>
     </div>

@@ -100,7 +100,7 @@ const Footer = () => {
             "addressCountry": "Türkiye"
           },
           "telephone": contactInfo.phone,
-          "url": "https://avseymanurtasdemir.com",
+          "url": "https://seymanurtasdemir.av.tr",
           "sameAs": [
             "https://www.instagram.com/av.seymanurtasdemir",
             "https://x.com/avseymatasdemir"

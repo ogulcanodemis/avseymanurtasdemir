@@ -3,7 +3,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // AOS CSS dosyasını ekleyin
 import CustomNavbar from '../Components/CustomNavbar';
 import CarouselComponent from '../Components/CarouselComponent';
-import Services from '../Components/Services';
 import AboutSection from '../Components/AboutSection';
 import PracticeAreas from '../Components/PracticeAreas';
 import ValuesAndTestimonials from '../Components/ValuesAndTestimonials';
@@ -35,7 +34,6 @@ const Home = () => {
       </div>
 
       <div id="services" data-aos="fade-left">
-        <Services />
         <CallToAction />
         <PracticeAreas />
       </div>

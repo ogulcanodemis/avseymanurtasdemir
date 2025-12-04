@@ -71,7 +71,7 @@ const Services = () => {
           "provider": {
             "@type": "Organization",
             "name": "Avukat Şeyma Nur Taşdemir",
-            "url": "https://avseymanurtasdemir.com",
+            "url": "https://seymanurtasdemir.av.tr",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Çağlayan, Mari Emek Ofisi, Ekim Sokağı No:7 K:2 D:4",

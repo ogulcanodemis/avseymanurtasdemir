@@ -2,10 +2,8 @@
 header('Content-Type: application/json');
 // İki domain'i de destekle
 $allowed_origins = [
-    'https://avseymanurtasdemir.com',
-    'https://avseymanurtasdemir.com.tr',
-    'https://www.avseymanurtasdemir.com',
-    'https://www.avseymanurtasdemir.com.tr'
+    'https://seymanurtasdemir.av.tr',
+    'https://www.seymanurtasdemir.av.tr'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';

@@ -19,7 +19,7 @@ const SingleBlog = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await axios.get(`https://avseymanurtasdemir.com/backend/api/get_blog_final.php?id=${id}`);
+                const response = await axios.get(`https://seymanurtasdemir.av.tr/backend/api/get_blog_final.php?id=${id}`);
                 if (response.data.success) {
                     setBlog(response.data.data);
                     document.title = `${response.data.data.title} - Av. Seymanur Taşdemir`;
